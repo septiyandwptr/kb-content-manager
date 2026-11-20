@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otorisasi TikTok Berhasil - KB Content Manager</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; text-align: center; padding: 50px 20px; line-height: 1.6; }
+    .box { max-width: 500px; margin: 0 auto; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 30px; }
+    h2 { color: #10b981; }
+    code { display: block; background: #eee; padding: 10px; margin: 15px 0; border-radius: 5px; word-break: break-all; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>✅ Otorisasi Berhasil!</h2>
+    <p>Akun TikTok Anda berhasil terhubung ke <strong>KB Content Manager</strong>.</p>
+    <p>Authorization Code:</p>
+    <code id="auth-code">Memuat kode...</code>
+    <p><small>Anda dapat menutup halaman ini atau kembali ke aplikasi dashboard.</small></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    const authCodeEl = document.getElementById('auth-code');
+    if (code) {
+      authCodeEl.innerText = code;
+    } else {
+      authCodeEl.innerText = 'Tidak ada kode ditemukan atau otorisasi dibatalkan.';
+    }
+  </script>
+</body>
+</html>
